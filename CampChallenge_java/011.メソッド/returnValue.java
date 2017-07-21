@@ -21,7 +21,7 @@ public class returnValue extends HttpServlet {
     
       //配列と戻り値を設定
     String[] data(){
-        String[] data = {"ID","田中","2017/7/20","東京都杉並区"};
+        String[] data = {"ID","田中 <br>","2017/7/20 <br>","東京都杉並区<br>"};
             return data;
     }
     
@@ -41,10 +41,13 @@ public class returnValue extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             
              //新たな変数に変換
-            String[] profile = data();
+            String[] prof = data();
             
             //IDだけ表示されないよう条件を設定
-            
+            for(int i= 1;i<prof.length;i++){
+                out.print(prof[i]);
+            }
+       
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
