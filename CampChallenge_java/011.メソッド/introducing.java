@@ -20,16 +20,17 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author yuki
  */
-public class introducing extends HttpServlet {
+public class Introducing extends HttpServlet {
 
-//自己紹介の定義
- void myprofile(PrintWriter pw){
+//自己紹介の定義　戻り値としてtrueを設定
+boolean checkPlus(PrintWriter pw){
  pw.print("私の名前は三浦優輝<br>");
  pw.print("1991年8月8日生まれ<br>");
  pw.print("よろしくお願いします<br>");
-
-}   
-  
+return true;
+}          
+        
+        
 
     
     /**
@@ -49,8 +50,15 @@ public class introducing extends HttpServlet {
             
             //自己紹介を10回表示
             for(int i = 0;i<10;i++){
-                myprofile(out);
+                checkPlus(out);
             }    
+            //真偽によりコメントを変化
+            if(checkPlus(out)) {
+                    out.print("この処理は正しく実行されました");
+                }else{
+                    out.print("正しく実行できませんでした");
+                }        
+       
             
             out.println("<!DOCTYPE html>");
             out.println("<html>");
