@@ -8,12 +8,12 @@
  *
  * @author guest1Day
  */
-
 import java.io.*;
 
 public class File2 {
-    public static void main(String[] args){
-        try{
+
+    public static void main(String[] args) {
+        try {
             //Fileインスタンスを作成
             File me = new File("self introduce");
             //FileReaderを生成
@@ -22,8 +22,10 @@ public class File2 {
             BufferedReader br = new BufferedReader(fr);
             //Fileを出力
             System.out.print(br.readLine());
-            
-        }catch(Exception ex){
+            //Fileを閉じる
+            br.close();
+
+        } catch (Exception ex) {
+        }
     }
-    } 
 }
