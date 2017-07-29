@@ -59,7 +59,7 @@
         <!--文字サイズの指定、段落の作成-->
         <h4>面白き<p>こともなき</p>世を面白く</h4>
         
-        <!--リストボックスの作成-->
+        <!--プルダウンボックスの作成-->
         <select>
             <option value="0">succer</option>
             <option value="1">baseball</option>
