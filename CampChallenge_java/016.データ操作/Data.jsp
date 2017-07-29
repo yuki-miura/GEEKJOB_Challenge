@@ -12,7 +12,6 @@
         <title>入力フィールド</title>
     </head>
     <body>
-
     <form action="./test.jsp" method="post">
     名前<input type="text" name="name"><br>
     性別<br>
