@@ -77,7 +77,6 @@ public class db2 extends HttpServlet {
             } catch (SQLException e) {
                 out.println(e.getMessage());
             } catch (Exception e) {
-                //何故かメッセージが表示される
                 out.println(e.getMessage());
             } finally {
                 if (db_con != null) {
