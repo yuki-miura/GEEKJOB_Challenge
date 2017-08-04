@@ -52,17 +52,17 @@ public class db2 extends HttpServlet {
                 
                 int num = db_st.executeUpdate();
                 
-                //db_st = db_con.prepareStatement("select * from profiles");
-                //db_da = db_st.executeQuery();
+                db_st = db_con.prepareStatement("select * from profiles");
+                db_da = db_st.executeQuery();
                 
-//                while(db_da.next()){
-//                    int id = db_da.getInt("profileID");
-//                    String na = db_da.getString("name");
-//                    String te = db_da.getString("tel");
-//                    int ag = db_da.getInt("age");
-//                    String br = db_da.getString("birthday");
-//                out.print(id +"<br>"+na +"<br>" +te +"<br>" +ag +"<br>" + br +"<br>");
-//                }
+                while(db_da.next()){
+                    int id = db_da.getInt("profileID");
+                    String na = db_da.getString("name");
+                    String te = db_da.getString("tel");
+                    int ag = db_da.getInt("age");
+                    String br = db_da.getString("birthday");
+                out.print(id +"<br>"+na +"<br>" +te +"<br>" +ag +"<br>" + br +"<br>");
+                }
                 
                 
                 
@@ -77,7 +77,8 @@ public class db2 extends HttpServlet {
             } catch (SQLException e) {
                 out.println(e.getMessage());
             } catch (Exception e) {
-                out.println("t" +e.getMessage());
+                //何故かメッセージが表示される
+                out.println(e.getMessage());
             } finally {
                 if (db_con != null) {
                     try {
