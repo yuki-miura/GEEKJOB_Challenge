@@ -32,20 +32,24 @@ public class session1 extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            
+            
             //Dateインスタンスを生成
             Date a = new Date();
             //DateをString型に変換
             String now = String.valueOf(a);
             
             HttpSession hs = request.getSession();
-            //Sessionにdateという名前で現在時刻を登録
-            hs.setAttribute("date", now);
+            
             //Sessionにデータが入っていれば最終ログインを表示、入っていなければ挨拶を表示
             if (hs.getAttribute("date") != null) {
+               // String last =(String)hs.getAttribute("date");
                 out.print("最終ログイン：" + hs.getAttribute("date"));
             } else {
                 out.print("こんにちわ！<br>" + "HELLO！<br>" + "你好！<br>" + "Здравствуйте!<br>" + "¡Hola！");
             }
+            //Sessionにdateという名前で現在時刻を登録
+            hs.setAttribute("date", now);
 
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
