@@ -1,0 +1,74 @@
+巨大なソース修正第二段階　修正箇所
+
+
+
+serch.java
+　アクセスチェック用の乱数を生成
+
+search.jsp
+　hiddenタグでアクセス情報を送信するように設定
+
+
+UserDataBeans
+　コンストラクタを引数無しに変更
+
+
+UseDataDTO
+　コンストラクタを引数無しに変更
+　Serializableを追加
+
+
+delete.java
+　直リンク防止処理を追加
+　消去機能を実装
+
+delete.jsp
+　トップに戻るを追加
+　選択肢の直リンクを設置
+　resultdetailで指定された人物の情報を表示
+
+
+deleteresult.java
+　直リンク防止処理を追加
+　データを消去するための記述を追加
+
+deleteresult.jsp
+　トップに戻るを追加
+
+
+resultdetail.jsp
+　トップに戻るを追加
+
+resultdetail.java
+　searchresult.jspで指定されたデータのIDで結果を表示するように変更
+　受け取ったIDをsessionに格納
+
+update.java
+　直リンク防止処理を追加
+
+update.jsp
+　resultdetailで指定されたIDのデータを表示
+
+
+updateresult.java
+　直リンク防止処理を追加
+　更新処理を実装
+　更新結果をsessionに格納
+
+updateresult.jsp
+　変更したデータを表示するように変更
+　詳細画面へ戻るを追加
+　
+
+serchresult.java
+　直リンク防止処理を追加
+　formで入力されたものをsessionに格納するように変更
+　resultDataList（検索に合致した人物リスト）をセッションに格納するよう変更
+
+searchresult.jsp
+　resultDataListを用いて結果を表示
+
+UserDataDAO
+　search.jspの入力状況によってsql文にセットするものを変える処理を追加
+　deleteメソッドを追加
+　updateメソッドを追加
